@@ -41,7 +41,7 @@ module.exports = {
             }
 
             jwt.sign(payload, process.env.SECRET, {
-                expiresIn: 86400
+                expiresIn: '24h'
             }, (err, token) => {
                 res.json({
                     success: true,
