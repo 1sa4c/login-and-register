@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import api from '../../services/api'
 
+import './styles.css'
+
 function Dashboard(){
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -24,11 +26,13 @@ function Dashboard(){
     }, [])
 
     return(
-        <div>
-            <h1>Dashboard</h1>
+        <div className='dashboard'>
+            <div className="dashboard-title">
+                <h1>Dashboard</h1>
+            </div>
             <div className="info">
-                <h2>{name}</h2>
-                <h2>{email}</h2>
+                <h2 className='info-item'>{name}</h2>
+                <h2 className='info-item'>{email}</h2>
             </div>
         </div>
     )

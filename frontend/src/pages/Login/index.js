@@ -28,20 +28,21 @@ function Login(){
     }
 
     return(
-        <div className='content-container'>
-            <Link to='/' className='content-item'>
+        <div className="page-container">
+            <Link to='/' className='content-title'>
                 <h1>Auth</h1>
-                <h4>Simple as it should be.</h4>
             </Link>
-            <h5>{error}</h5>
-            <form className='sign-form' onSubmit={e => handleLogin(e)}>
-                <input type="text" placeholder="Email" onChange={e => setEmail(e.target.value)}/>
-                <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
-                <button type="submit">Login</button>
-            </form>
-            <div className='content-item'>
-                <h4>Not registered yet?</h4>
-                <Link to='register' className='link'>Register now</Link>
+            <div className='content-container'>
+                <form className='sign-form' onSubmit={e => handleLogin(e)}>
+                    <span className='error-msg'>{error}</span>
+                    <input type="text" placeholder="Email" onChange={e => setEmail(e.target.value)}/>
+                    <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
+                    <button type="submit">Login</button>
+                </form>
+                <div className='content-item'>
+                    <h4>Not registered yet?</h4>
+                    <Link to='register' className='link'>Register now</Link>
+                </div>
             </div>
         </div>
     )

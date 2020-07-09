@@ -7,7 +7,7 @@ function Register(){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
-    const [error, setError] = useState('')
+    const [errors, setErrors] = useState('')
 
     const history = useHistory()
 
@@ -24,27 +24,31 @@ function Register(){
 
             history.push('/login')
         }catch(err) {
-            setError(err.response.data.error)
+            setErrors(err.response.data.errors)
         }
     }
 
     return(
-        <div className='content-container'>
-            <Link to='/' className='content-item'>
-                <h1>Auth</h1>
-                <h4>Simple as it should be.</h4>
-            </Link>
-            <h5>{error}</h5>
-            <form className='sign-form' onSubmit={e => handleRegister(e)}>
-                <input type="text" placeholder="Name" onChange={e => setName(e.target.value)}/>
-                <input type="text" placeholder="Email" onChange={e => setEmail(e.target.value)}/>
-                <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
-                <input type="password" placeholder="Password confirmation" onChange={e => setPasswordConfirmation(e.target.value)}/>
-                <button type="submit">Register</button>
-            </form>
-            <div className='content-item'>
-                <h4>Already have an account?</h4>
-                <Link to='/login' className='link'>Login</Link>
+        <div className="page-container">
+                <Link to='/' className='content-title'>
+                    <h1>Auth</h1>
+                </Link>
+            <div className='content-container'>
+                <form className='sign-form' onSubmit={e => handleRegister(e)}>
+                    <input type="text" placeholder="Name" onChange={e => setName(e.target.value)}/>
+                    <span className='error-msg'>{errors.name}</span>
+                    <input type="text" placeholder="Email" onChange={e => setEmail(e.target.value)}/>
+                    <span className='error-msg'>{errors.email}</span>
+                    <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
+                    <span className='error-msg'>{errors.password}</span>
+                    <input type="password" placeholder="Password confirmation" onChange={e => setPasswordConfirmation(e.target.value)}/>
+                    <span className='error-msg'>{errors.passwordConfirmation}</span>
+                    <button type="submit">Register</button>
+                </form>
+                <div className='content-item'>
+                    <h4>Already have an account?</h4>
+                    <Link to='/login' className='link'>Login</Link>
+                </div>
             </div>
         </div>
     )

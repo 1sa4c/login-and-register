@@ -8,9 +8,7 @@ const loginSchema = {
 const loginValidation = (req, res, next) => {
     const {error} = Joi.validate(req.body, loginSchema, {abortEarly: false})
     if(error){
-        const {details} = error
-        const message = details.map(item => item.message).join(',')
-        return res.status(422).json({error: message})
+        return res.status(422).json({error: 'Email or password wrong'})
     }
     next()
 }

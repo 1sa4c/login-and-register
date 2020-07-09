@@ -1,5 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    outline: none;
+}
+
+.page-container {
+    background-color: #222;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-container {
+    background-color: #fafafa;
+    width: 40vw;
+    height: 70vh;
+    margin: 0 auto;
+    border-radius: 0 0 10px 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.content-title {
+    background-color: #00c975;
+    color: white;
+    width: 40vw;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+}
+
+.sign-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.sign-form input {
+    background-color: transparent;
+    color: #00c975;
+    font-size: 18px;
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #00c975;
+}
+
+.sign-form button {
+    padding: 10px;
+    background-color: #00c975;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+}
+
+.link {
+    color: #00c975
+}
+
+.error-msg {
+    color: #cc0000;
+}
+
+@media only screen and (max-width: 600px) {
+    .content-container {
+        width: 90%;
+    }
+
+    .content-title {
+        width: 90%;
+    }
+
+    .sign-form input {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    .content-container {
+        width: 90%;
+        overflow-y: scroll;
+        padding-top: 20%;
+    }
+
+    .content-title {
+        width: 90%;
+    }
 }
