@@ -43,7 +43,7 @@ function Register(){
                     <span className='error-msg'>{errors.password}</span>
                     <input type="password" placeholder="Password confirmation" onChange={e => setPasswordConfirmation(e.target.value)}/>
                     <span className='error-msg'>{errors.passwordConfirmation}</span>
-                    <button type="submit">Register</button>
+                    <button className='green-button' type="submit">Register</button>
                 </form>
                 <div className='content-item'>
                     <h4>Already have an account?</h4>

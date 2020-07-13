@@ -37,9 +37,12 @@ function Login(){
                     <span className='error-msg'>{error}</span>
                     <input type="text" placeholder="Email" onChange={e => setEmail(e.target.value)}/>
                     <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
-                    <button type="submit">Login</button>
+                    <button className='green-button' type="submit">Login</button>
                 </form>
                 <div className='content-item'>
+                    <Link to='forgot' className='link'>Forgot your password?</Link>
+                </div>
+                <div className="content-item">
                     <h4>Not registered yet?</h4>
                     <Link to='register' className='link'>Register now</Link>
                 </div>
